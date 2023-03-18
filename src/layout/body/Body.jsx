@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "../home/Home";
 import { Login } from "../login/Login";
 import { Profile } from "../profile/Profile";
@@ -10,6 +10,7 @@ export const Body = () => {
     <>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="*" element={<Navigate to="/"/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/profile" element={<Profile/>} />

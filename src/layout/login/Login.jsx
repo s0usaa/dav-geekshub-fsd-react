@@ -4,11 +4,14 @@ import { InputText } from "../../components/inputtext/InputText";
 import "./Login.css";
 import { validate } from "../../helpers/useful";
 import { logMe } from "../../services/apiCalls";
-import { useDispatch } from "react-redux";
-import { login } from "../userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { login, userData } from "../userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const credentialsRdx = useSelector(userData);
 
   const [credenciales, setCredenciales] = useState({
     email: "",
@@ -24,6 +27,13 @@ export const Login = () => {
     emailVali: false,
     passwordVali: false,
   });
+
+  useEffect(() => {
+    if (credentialsRdx.credentials.token) {
+      //Si No token...home redirect
+      navigate("/");
+    }
+  }, []);
 
   const [registerAct, setRegisterAct] = useState(false);
 
@@ -78,13 +88,14 @@ export const Login = () => {
     logMe(credenciales)
       .then((respuesta) => {
         let datosBackend = {
-          token: respuesta.data.token,
+          token: respuesta.token,
           usuario: respuesta.data
         };
-        console.log(credenciales);
         console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
+
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };

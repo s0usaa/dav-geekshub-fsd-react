@@ -1,0 +1,33 @@
+.loginInputs{
+    height: 100vh;
+}
+
+.registerSendDeac {
+
+    height: 2em;
+    width: 9em;
+
+    background-color: black;
+
+    border-radius: 0.2em;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerSendAct {
+
+    cursor: pointer;
+    background-color: red;
+    
+
+
+}
+
+.registerSendAct:hover {
+
+    transition: 1s;
+    background-color: darkred;
+}

@@ -1,0 +1,9 @@
+.inputValid{
+    border: 0.2em solid lightgray;
+}
+
+.inputError {
+
+    border: 0.2em solid red;
+
+}

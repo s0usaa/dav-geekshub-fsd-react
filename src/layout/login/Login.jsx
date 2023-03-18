@@ -81,7 +81,7 @@ export const Login = () => {
           token: respuesta.data.token,
           usuario: respuesta.data
         };
-
+        console.log(credenciales);
         console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
@@ -129,7 +129,7 @@ export const Login = () => {
             }
             onClick={registerAct ? logeame : () => {}}
           >
-            Register me!
+            Log me!
           </div>
         </Col>
       </Row>

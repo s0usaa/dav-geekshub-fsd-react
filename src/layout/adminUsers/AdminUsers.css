@@ -1,8 +1,7 @@
-.userDesign{
+.adminusersDesign {
     margin-top: 4em;
-    height: 50vh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

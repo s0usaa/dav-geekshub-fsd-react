@@ -31,12 +31,13 @@ export const Login = () => {
 
   useEffect(() => {
     if (credentialsRdx.credentials.token) {
-      //Si No token...home redirect
-      navigate("/");
+      //Si No token...login redirect
+      navigate("/login");
     }
   }, []);
 
   const [registerAct, setRegisterAct] = useState(false);
+  const [welcome, setWelcome] = useState("");
 
   const inputHandler = (e) => {
     setCredenciales((prevState) => ({
@@ -94,18 +95,32 @@ export const Login = () => {
           token: respuesta.data,
           usuario: decodificado
         };
-        console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
 
-        navigate("/");
+         //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
+         setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.name}`);
+
+         //Redirección a Home
+ 
+         setTimeout(() => {
+           navigate("/");
+         }, 3000);
       })
       .catch((error) => console.log(error));
   };
 
   return (
     <Container fluid>
-      <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
+      {welcome !=='' ? 
+      (
+        <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
+          <Col xs={12} sm={6}>
+            <div>{welcome}</div>
+          </Col>
+        </Row>
+      ) : (
+        <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
         <Col className="" xs={12} sm={6}>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Email</Form.Label>
@@ -124,7 +139,7 @@ export const Login = () => {
           />
           <Form.Text className="text-danger">{credencialesError.emailError}</Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicPassword2">
             <Form.Label>Password</Form.Label>
           <InputText
             className={
@@ -153,6 +168,9 @@ export const Login = () => {
           </div>
         </Col>
       </Row>
+      )
+      }
+      
     </Container>
   );
 };

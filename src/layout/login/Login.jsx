@@ -7,6 +7,7 @@ import { logMe } from "../../services/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { login, userData } from "../userSlice";
 import { useNavigate } from "react-router-dom";
+import { decodeToken } from 'react-jwt'
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -87,9 +88,11 @@ export const Login = () => {
   const logeame = () => {
     logMe(credenciales)
       .then((respuesta) => {
+        let decodificado = decodeToken(respuesta.data)
+        console.log(decodificado);
         let datosBackend = {
-          token: respuesta.token,
-          usuario: respuesta.data
+          token: respuesta.data,
+          usuario: decodificado
         };
         console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX

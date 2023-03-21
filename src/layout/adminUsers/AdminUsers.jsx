@@ -19,7 +19,7 @@ export const AdminUsers = () => {
 
   useEffect(() => {
     if (users.length === 0) {
-      //   if (!reduxCredentials.credentials.usuario.roles.includes('Admin')) {
+      //   if (!reduxCredentials.credentials.usuario.roleId.includes(1)) {
       //       navigate("/");
       //   return;
       // }

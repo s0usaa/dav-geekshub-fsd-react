@@ -7,7 +7,7 @@ import { logMe } from "../../services/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { login, userData } from "../userSlice";
 import { useNavigate } from "react-router-dom";
-import { decodeToken } from 'react-jwt'
+import { decodeToken } from "react-jwt";
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -89,31 +89,30 @@ export const Login = () => {
   const logeame = () => {
     logMe(credenciales)
       .then((respuesta) => {
-        let decodificado = decodeToken(respuesta.data)
-        console.log(decodificado);
+        let decodificado = decodeToken(respuesta.data);
         let datosBackend = {
           token: respuesta.data,
-          usuario: decodificado
+          usuario: decodificado,
         };
+        console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
 
-         //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
-         setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.name}`);
+        //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
+        setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.email}`);
 
-         //Redirección a Home
- 
-         setTimeout(() => {
-           navigate("/");
-         }, 3000);
+        //Redirección a Home
+
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
       })
       .catch((error) => console.log(error));
   };
 
   return (
     <Container fluid>
-      {welcome !=='' ? 
-      (
+      {welcome !== "" ? (
         <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
           <Col xs={12} sm={6}>
             <div>{welcome}</div>
@@ -121,56 +120,50 @@ export const Login = () => {
         </Row>
       ) : (
         <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
-        <Col className="" xs={12} sm={6}>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Email</Form.Label>
-          <InputText
-            className={
-              credencialesError.nameError === ""
-                ? "mb-4"
-                : "mb-4"
-            }
-            type={"email"}
-            name={"email"}
-            placeholder={"Introduce tu email"}
-            required={true}
-            changeFunction={(e) => inputHandler(e)}
-            blurFunction={(e) => checkError(e)}
-          />
-          <Form.Text className="text-danger">{credencialesError.emailError}</Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword2">
-            <Form.Label>Password</Form.Label>
-          <InputText
-            className={
-              credencialesError.nameError === ""
-                ? "mb-4"
-                : "mb-4"
-            }
-            type={"password"}
-            name={"password"}
-            placeholder={"Introduce tu password"}
-            required={true}
-            changeFunction={(e) => inputHandler(e)}
-            blurFunction={(e) => checkError(e)}
-          />
-          <Form.Text className="text-danger">{credencialesError.passwordError}</Form.Text>
-          </Form.Group>
-          <div
-            className={
-              registerAct
-                ? "registerSendDeac registerSendAct"
-                : "registerSendDeac"
-            }
-            onClick={registerAct ? logeame : () => {}}
-          >
-            Log in!
-          </div>
-        </Col>
-      </Row>
-      )
-      }
-      
+          <Col className="" xs={12} sm={6}>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Email</Form.Label>
+              <InputText
+                className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
+                type={"email"}
+                name={"email"}
+                placeholder={"Introduce tu email"}
+                required={true}
+                changeFunction={(e) => inputHandler(e)}
+                blurFunction={(e) => checkError(e)}
+              />
+              <Form.Text className="text-danger">
+                {credencialesError.emailError}
+              </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword2">
+              <Form.Label>Password</Form.Label>
+              <InputText
+                className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
+                type={"password"}
+                name={"password"}
+                placeholder={"Introduce tu password"}
+                required={true}
+                changeFunction={(e) => inputHandler(e)}
+                blurFunction={(e) => checkError(e)}
+              />
+              <Form.Text className="text-danger">
+                {credencialesError.passwordError}
+              </Form.Text>
+            </Form.Group>
+            <div
+              className={
+                registerAct
+                  ? "registerSendDeac registerSendAct"
+                  : "registerSendDeac"
+              }
+              onClick={registerAct ? logeame : () => {}}
+            >
+              Log in!
+            </div>
+          </Col>
+        </Row>
+      )}
     </Container>
   );
 };

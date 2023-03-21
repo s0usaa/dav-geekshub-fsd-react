@@ -2,12 +2,17 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { userData } from "../layout/userSlice";
+import { userData, userout } from "../layout/userSlice";
 
 export const NavbarWeb = () => {
   const datosCredencialesRedux = useSelector(userData);
+  const dispach = useDispatch
+
+  const logout = ()=>{
+    dispach(userout({credentials:{}, token:""}))
+  }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
@@ -33,24 +38,7 @@ export const NavbarWeb = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            {datosCredencialesRedux.credentials.token ? (
-              <>
-              <NavDropdown title="Admin" id="nav-dropdown">
-                <NavDropdown.Item as={Link} to={"/users"}>
-                  Usuarios
-                </NavDropdown.Item>
-              </NavDropdown>
-                <Nav.Link as={Link} to={"/appointmentweb"}>
-                  Citas
-                </Nav.Link>
-                <Nav.Link as={Link} to={"/profile"}>
-                  Profile
-                </Nav.Link>
-                <Nav.Link as={Link} to={"/"}>
-                  Logout
-                </Nav.Link>
-              </>
-            ) : (
+            {!datosCredencialesRedux.credentials.usuario ? (
               <>
                 <Nav.Link as={Link} to={"/register"}>
                   Register
@@ -59,6 +47,44 @@ export const NavbarWeb = () => {
                   Login
                 </Nav.Link>
               </>
+            ) : datosCredencialesRedux.credentials.usuario.roleId === 1 ? (
+              <>
+                <NavDropdown title='Admin'>
+                  <NavDropdown.Item as={Link} to={"/users"} >Usarios
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Link as={Link} to={"/"}>
+                  Home
+                </Nav.Link>
+                <Nav.Link onClick={logout} as={Link} to={"/home"}>
+                  Logout
+                </Nav.Link>
+              </>
+            ): datosCredencialesRedux.credentials.usuario.roleId === 2 ? (
+              <>
+              <Nav.Link as={Link} to={"/appointmentweb"}>
+                  Citas
+                </Nav.Link>
+                <Nav.Link onClick={logout} as={Link} to={"/home"}>
+                  Logout
+                </Nav.Link>
+              </>
+            ): datosCredencialesRedux.credentials.usuario.roleId === 3 ? (
+              <>
+              <Nav.Link as={Link} to={"/appointmentweb"}>
+                  Citas
+                </Nav.Link>
+              <Nav.Link as={Link} to={"/profile"}>
+                  Perfil
+                </Nav.Link>
+                <Nav.Link onClick={logout} as={Link} to={"/home"}>
+                  Logout
+                </Nav.Link>
+              </>
+            ): (
+              <Nav.Link onClick={logout} as={Link} to={"/home"}>
+                  Logout
+                </Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>

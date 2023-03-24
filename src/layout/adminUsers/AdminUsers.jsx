@@ -18,12 +18,7 @@ export const AdminUsers = () => {
   const reduxCredentials = useSelector(userData);
 
   useEffect(() => {
-    if (users.length === 0) {
-      //   if (!reduxCredentials.credentials.usuario.roleId.includes(1)) {
-      //       navigate("/");
-      //   return;
-      // }
-  
+    if (users.length === 0) {  
       bringUsers(reduxCredentials.credentials.token)
         .then((result) => {
           console.log(result);

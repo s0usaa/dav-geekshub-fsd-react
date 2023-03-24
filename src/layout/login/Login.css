@@ -2,7 +2,7 @@
     height: 100vh;
 }
 
-.registerSendDeac {
+.loginSendDeac {
 
     height: 2em;
     width: 9em;
@@ -17,7 +17,7 @@
     align-items: center;
 }
 
-.registerSendAct {
+.loginSendAct {
 
     cursor: pointer;
     background-color: red;
@@ -26,7 +26,7 @@
 
 }
 
-.registerSendAct:hover {
+.loginSendAct:hover {
 
     transition: 1s;
     background-color: darkred;

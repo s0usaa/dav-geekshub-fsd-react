@@ -121,7 +121,7 @@ export const Login = () => {
       ) : (
         <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
           <Col className="" xs={12} sm={6}>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <InputText
                 className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
@@ -136,7 +136,7 @@ export const Login = () => {
                 {credencialesError.emailError}
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword2">
+            <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <InputText
                 className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
@@ -154,8 +154,8 @@ export const Login = () => {
             <div
               className={
                 registerAct
-                  ? "registerSendDeac registerSendAct"
-                  : "registerSendDeac"
+                  ? "loginSendDeac loginSendAct"
+                  : "loginSendDeac"
               }
               onClick={registerAct ? logeame : () => {}}
             >

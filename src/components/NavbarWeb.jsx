@@ -56,7 +56,7 @@ export const NavbarWeb = () => {
                 <Nav.Link as={Link} to={"/"}>
                   Home
                 </Nav.Link>
-                <Nav.Link onClick={logout} as={Link} to={"/home"}>
+                <Nav.Link  as={Link} to={"/home"} onClick={()=>logout()}>
                   Logout
                 </Nav.Link>
               </>
@@ -65,7 +65,7 @@ export const NavbarWeb = () => {
               <Nav.Link as={Link} to={"/appointmentweb"}>
                   Citas
                 </Nav.Link>
-                <Nav.Link onClick={logout} as={Link} to={"/home"}>
+                <Nav.Link  as={Link} to={"/"} onClick={()=>logout()}>
                   Logout
                 </Nav.Link>
               </>
@@ -77,12 +77,12 @@ export const NavbarWeb = () => {
               <Nav.Link as={Link} to={"/profile"}>
                   Perfil
                 </Nav.Link>
-                <Nav.Link onClick={logout} as={Link} to={"/home"}>
+                <Nav.Link as={Link} to={"/"} onClick={()=>logout()} >
                   Logout
                 </Nav.Link>
               </>
             ): (
-              <Nav.Link onClick={logout} as={Link} to={"/home"}>
+              <Nav.Link  as={Link} to={"/"} onClick={()=>logout()}>
                   Logout
                 </Nav.Link>
             )}

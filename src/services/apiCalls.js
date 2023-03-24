@@ -37,6 +37,7 @@ export const getProfile = async (token) => {
 
 //Ver citas Usuario
 export const getAppointment = async (token) =>{
+  console.log(token, "hola soyy token");
   let config = {
     headers: {
       'Authorization' : `Bearer ${token}`

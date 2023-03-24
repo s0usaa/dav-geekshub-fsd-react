@@ -16,7 +16,6 @@ export const Profile = () => {
     email: ""
   });
 
-
   useEffect(()=>{
     if(userProfile.name === ""){
       getProfile(reduxCredentials.credentials.token)

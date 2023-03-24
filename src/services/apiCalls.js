@@ -34,3 +34,13 @@ export const getProfile = async (token) => {
   }
   return await axios.get(`${root}profile`, config);
 }
+
+//Ver citas Usuario
+export const getAppointment = async (token) =>{
+  let config = {
+    headers: {
+      'Authorization' : `Bearer ${token}`
+    }
+  }
+  return await axios.get(`${root}appointment`, config);
+}

@@ -1,4 +1,8 @@
 .profileDesign{
-    margin-top: 4em;
     height: 100vh;
+}
+
+.profileDivs{
+    font-size: 1.5rem;
+    color: green;
 }

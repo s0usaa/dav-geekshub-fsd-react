@@ -23,10 +23,10 @@ export const Profile = () => {
       .then((respuesta)=>{
         console.log(respuesta);
         setUserProfile({
-          name: respuesta.data,
-          surname: respuesta.data,
-          phone: respuesta.data,
-          email: respuesta.data
+          name: respuesta.data.name,
+          surname: respuesta.data.surname,
+          phone: respuesta.data.phone,
+          email: respuesta.data.email
         })
       })
       .catch((error)=> console.log(error));
@@ -34,12 +34,16 @@ export const Profile = () => {
   },[userProfile])
 
   return (
-    <Container>
+    <Container fluid>
       <Row className='profileDesign'>
-        <Col>
+        <Col className='d-flex flex-column align-items-center justify-content-center'>
+        <div className='profileDivs'>Nombre</div>
         <div>{userProfile.name}</div>
+        <div className='profileDivs'>Apellido</div>
         <div>{userProfile.surname}</div>
+        <div className='profileDivs'>Telefono</div>
         <div>{userProfile.phone}</div>
+        <div className='profileDivs'>Email</div>
         <div>{userProfile.email}</div>
         </Col>
       </Row>

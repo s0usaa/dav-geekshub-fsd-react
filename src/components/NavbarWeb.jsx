@@ -8,10 +8,10 @@ import { userData, userout } from "../layout/userSlice";
 
 export const NavbarWeb = () => {
   const datosCredencialesRedux = useSelector(userData);
-  const dispach = useDispatch
+  const dispatch = useDispatch();
 
   const logout = ()=>{
-    dispach(userout({credentials:{}, token:""}))
+    dispatch(userout({credentials:{}, token:""}))
   }
 
   return (
@@ -71,6 +71,9 @@ export const NavbarWeb = () => {
               </>
             ): datosCredencialesRedux.credentials.usuario.roleId === 3 ? (
               <>
+              <Nav.Link as={Link} to={"/appointment/create"}>
+                  Pedir cita
+                </Nav.Link>
               <Nav.Link as={Link} to={"/appointmentweb"}>
                   Citas
                 </Nav.Link>

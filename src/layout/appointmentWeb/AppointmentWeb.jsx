@@ -21,11 +21,6 @@ export const AppointmentWeb = () => {
     }
   }, [userAppointment]);
 
-  // const appointments = (citas) =>{
-  //   dispach(addChoosen({
-  //     choosenObject: persona }))
-  //     console.log(citas);
-  // }
   console.log(userAppointment);
   return (
     <Container fluid>
@@ -34,12 +29,14 @@ export const AppointmentWeb = () => {
           {userAppointment.map((citas) => {
             return (
               <>
-              
+
                 <div key={citas.id}>
-                  <div>{citas.id}</div>
-                  {/* <div>{citas.date}</div>
+                  <div className="appointmentDiv">Doctor</div>
                   <div>{citas.doctor_id}</div>
-                  <div>{citas.hour}</div> */}
+                  <div className="appointmentDiv">Fecha</div>
+                  <div>{citas.date}</div>
+                  <div className="appointmentDiv">Hora</div>
+                  <div>{citas.hour}</div>
                 </div>
               </>
             );

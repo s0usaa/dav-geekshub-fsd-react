@@ -45,3 +45,13 @@ export const getAppointment = async (token) =>{
   }
   return await axios.get(`${root}appointment`, config);
 }
+
+//Crear citas Usuario
+export const createCitas = async (body, token) => {
+  let config = {
+    headers: {
+      'Authorization' : `Bearer ${token}`
+    }
+  }
+  return await axios.post(`${root}appointment`, body, config);
+}

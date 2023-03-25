@@ -5,18 +5,21 @@ import { useNavigate } from 'react-router-dom'
 import { InputText } from '../../components/inputtext/InputText';
 import { createCitas } from '../../services/apiCalls';
 import { userData } from '../userSlice';
+import './NewAppointment.css'
 
 export const NewAppointment = () => {
 
 const navigate = useNavigate();
 const [welcome, setWelcome] = useState("");
 const reduxCredentials = useSelector(userData)
-const [newAppointmet, setNewAppointment] = useState({
+const [newAppointment, setNewAppointment] = useState({
     doctor_id: "",
-    // patient_id: reduxCredentials.credentials,
+    patient_id: reduxCredentials.credentials,
     date: "",
     hour: ""
 })
+
+console.log(newAppointment);
 
 // console.log(reduxCredentials.credentials);
 
@@ -26,17 +29,17 @@ const inputHandler = (e) => {
         [e.target.name]:e.target.value
     }));
 }
-console.log(newAppointmet);
+// console.log(newAppointment);
 
 const checkError = (e) => {
-
+  console.log("holaquease");
 }
 
 const createAppointment = ()=> {
-    createCitas(newAppointmet, reduxCredentials.credentials.token)
+    createCitas(reduxCredentials.credentials.token, newAppointment)
     .then(resultado =>{
         setNewAppointment(resultado.data)
-        setWelcome(`Cita creada correctamente para el dia: ${newAppointmet.date}`)
+        setWelcome(`Cita creada correctamente para el dia: ${newAppointment.date}`)
         setTimeout(()=>{
             navigate('/appointmentweb');
         },2500);
@@ -48,17 +51,16 @@ const createAppointment = ()=> {
 
   return (
     <Container>
-        <Row>
+        <Row className='appointmentDivs'>
             <Col>
             <Form>
-            <Form.Group className="mb-1" controlId="formBasicDoctor">
+            <Form.Group className="mb-3" controlId="formBasicDoctor">
               <Form.Label>Doctor</Form.Label>
               <InputText
                 className={""}
                 type={"number"}
                 name={"doctor_id"}
                 placeholder={"Selecciona tu doctor"}
-                required={true}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
@@ -70,7 +72,6 @@ const createAppointment = ()=> {
                 type={"date"}
                 name={"date"}
                 placeholder={"Selecciona tu doctor"}
-                required={true}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
@@ -82,7 +83,6 @@ const createAppointment = ()=> {
                 type={"time"}
                 name={"hour"}
                 placeholder={"Selecciona tu doctor"}
-                required={true}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />

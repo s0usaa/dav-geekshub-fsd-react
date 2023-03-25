@@ -47,11 +47,11 @@ export const getAppointment = async (token) =>{
 }
 
 //Crear citas Usuario
-export const createCitas = async (body, token) => {
+export const createCitas = async (body,token, userId) => {
   let config = {
     headers: {
       'Authorization' : `Bearer ${token}`
     }
   }
-  return await axios.post(`${root}appointment`, body, config);
+  return await axios.post(`${root}appointment`,body, config, userId);
 }

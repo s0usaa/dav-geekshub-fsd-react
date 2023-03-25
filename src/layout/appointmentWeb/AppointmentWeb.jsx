@@ -29,7 +29,6 @@ export const AppointmentWeb = () => {
           {userAppointment.map((citas) => {
             return (
               <>
-
                 <div key={citas.id}>
                   <div className="appointmentDiv">Doctor</div>
                   <div>{citas.doctor_id}</div>

@@ -33,7 +33,7 @@ export const validate = (name, data, required) => {
         return { message: "Rellena los campos", validated: false };
       } else if (data.length < 5) {
         return {
-          message: "El password tiene que tener mas de 8 caracteres",
+          message: "El password tiene que tener mas de 4 caracteres",
           validated: false,
         };
       }

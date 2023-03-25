@@ -11,10 +11,11 @@ export const NewAppointment = () => {
 
 const navigate = useNavigate();
 const [welcome, setWelcome] = useState("");
+
 const reduxCredentials = useSelector(userData)
 const [newAppointment, setNewAppointment] = useState({
     doctor_id: "",
-    // patient_id: reduxCredentials.credentials.token,
+    patient_id: reduxCredentials.credentials.token,
     date: "",
     hour: ""
 })
@@ -38,6 +39,7 @@ const checkError = (e) => {
 const createAppointment = ()=> {
     createCitas(reduxCredentials.credentials.token, newAppointment)
     .then(resultado =>{
+      console.log(resultado);
         setNewAppointment(resultado.data)
         setWelcome(`Cita creada correctamente para el dia: ${newAppointment.date}`)
         setTimeout(()=>{

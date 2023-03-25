@@ -15,7 +15,6 @@ export const bringUsers = async (token) => {
         'Authorization': 'Bearer '+ token,  
       }
     };
-
     return await axios.get(`${root}adminuser`, config);
 }
 
@@ -37,7 +36,6 @@ export const getProfile = async (token) => {
 
 //Ver citas Usuario
 export const getAppointment = async (token) =>{
-  console.log(token, "hola soyy token");
   let config = {
     headers: {
       'Authorization' : `Bearer ${token}`
@@ -47,11 +45,19 @@ export const getAppointment = async (token) =>{
 }
 
 //Crear citas Usuario
-export const createCitas = async (body,token, userId) => {
+export const createCitas = async ( body,token) => {
   let config = {
     headers: {
-      'Authorization' : `Bearer ${token}`
+      'Authorization' : `Bearer` + token,
     }
   }
-  return await axios.post(`${root}appointment`,body, config, userId);
+  let patient = {
+    body: {
+      doctor_id: 1,
+      patient_id: 6,
+      date: "2023-03-31",
+      hour: "13:30"
+    }
+  }
+  return await axios.post(`${root}appointment`,body, patient, config);
 }

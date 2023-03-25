@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { InputText } from "../../components/inputtext/InputText";
 import "./Login.css";
-import { validate } from "../../helpers/useful";
+import { validate2 } from "../../helpers/useful";
 import { logMe } from "../../services/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { login, userData } from "../userSlice";
@@ -71,7 +71,7 @@ export const Login = () => {
   const checkError = (e) => {
     let error = "";
 
-    let checked = validate(e.target.name, e.target.value, e.target.required);
+    let checked = validate2(e.target.name, e.target.value, e.target.required);
 
     error = checked.message;
 

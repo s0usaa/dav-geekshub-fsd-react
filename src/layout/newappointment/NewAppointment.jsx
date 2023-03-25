@@ -14,7 +14,7 @@ const [welcome, setWelcome] = useState("");
 const reduxCredentials = useSelector(userData)
 const [newAppointment, setNewAppointment] = useState({
     doctor_id: "",
-    patient_id: reduxCredentials.credentials,
+    // patient_id: reduxCredentials.credentials.token,
     date: "",
     hour: ""
 })
@@ -52,7 +52,7 @@ const createAppointment = ()=> {
   return (
     <Container>
         <Row className='appointmentDivs'>
-            <Col>
+            <Col lg={6} sm={12}>
             <Form>
             <Form.Group className="mb-3" controlId="formBasicDoctor">
               <Form.Label>Doctor</Form.Label>
@@ -69,7 +69,7 @@ const createAppointment = ()=> {
               <Form.Label>Fecha</Form.Label>
               <InputText
                 className={""}
-                type={"date"}
+                type={"text"}
                 name={"date"}
                 placeholder={"Selecciona tu doctor"}
                 changeFunction={(e) => inputHandler(e)}
@@ -80,15 +80,15 @@ const createAppointment = ()=> {
               <Form.Label>Hora</Form.Label>
               <InputText
                 className={""}
-                type={"time"}
+                type={"text"}
                 name={"hour"}
                 placeholder={"Selecciona tu doctor"}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
               </Form.Group>
-              <Button variant="primary" onClick={createAppointment}>
-                    New Date
+              <Button variant="dark" onClick={createAppointment}>
+                    Pedir Cita
                 </Button>
             </Form>
             </Col>

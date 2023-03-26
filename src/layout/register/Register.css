@@ -1,6 +1,15 @@
 .registerMain{
-    height: 100vh;
     margin-top: 4em;
+}
+
+.registerDesign{
+    height: 100vh;
+}
+
+.registerCol{
+    background-color: rgb(241, 241, 241);
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 0.3em 0.3em grey;
 }
 
 .registerSendDeac {

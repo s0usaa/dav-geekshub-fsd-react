@@ -97,10 +97,12 @@ export const Register = () => {
   return (
     <Container className="registerMain">
       <Row className="registerDesign d-flex justify-content-center align-items-center">
-        <Col xs={12} sm={6}>
+        <Col xs={12} sm={6} className="registerCol">
+        <h1>Registro en los servicios digitales de Clinica Dental</h1>
+        <h6>Completa este formulario y accede a todas las ventajas de ser cliente de SegurCaixa Adeslas.</h6>
           <Form>
             <Form.Group className="mb-1" controlId="formBasicName">
-              <Form.Label>Nombre</Form.Label>
+              <Form.Floating>
               <InputText
                 className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
                 type={"text"}
@@ -111,12 +113,14 @@ export const Register = () => {
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
+              <label htmlFor="floatingInputCustom">Nombre*</label>
+              </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.nameError}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicSurname">
-              <Form.Label>Apellido</Form.Label>
+              <Form.Floating>
               <InputText
                 className={credencialesError.surnameError === "" ? "mb-4" : "mb-4"}
                 type={"text"}
@@ -127,28 +131,32 @@ export const Register = () => {
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
+              <label htmlFor="floatingInputCustom">Apellido*</label>
+              </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.surnameError}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicPhone">
-              <Form.Label>Telefono</Form.Label>
+              <Form.Floating>
               <InputText
                 className={credencialesError.phoneError === "" ? "mb-4" : "mb-4"}
                 type={"text"}
                 name={"phone"}
                 placeholder={"Introduce tu telefono"}
                 required={true}
-                // maxLenght={10}
+                maxLenght={10}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
+              <label htmlFor="floatingInputCustom">Telefono*</label>
+              </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.phoneError}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
+              <Form.Floating>
               <InputText
                 className={credencialesError.emailError === "" ? "mb-4" : "mb-4"}
                 type={"email"}
@@ -159,12 +167,14 @@ export const Register = () => {
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
+              <label htmlFor="floatingInputCustom">Email*</label>
+              </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.emailError}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Floating>
               <InputText
                 className={credencialesError.passwordError === "" ? "mb-4" : "mb-4"}
                 type={"password"}
@@ -175,6 +185,8 @@ export const Register = () => {
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
+              <label htmlFor="floatingInputCustom">Password*</label>
+              </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.passwordError}
               </Form.Text>
@@ -190,6 +202,7 @@ export const Register = () => {
             >
               Register!
             </div>
+            <p>*Los campos con asterisco son obligatorios</p>
         </Col>
       </Row>
     </Container>

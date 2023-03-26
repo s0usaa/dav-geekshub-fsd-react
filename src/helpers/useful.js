@@ -18,7 +18,7 @@ export const validate = (name, data, required) => {
 
     case "email":
       if (data === "" && required === true) {
-        return { message: "Rellena los campos", validated: false };
+        return { message: "Rellena los campos vacios", validated: false };
       } else if (
         !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data)
       ) {
@@ -30,7 +30,7 @@ export const validate = (name, data, required) => {
     case "password":
 
       if (data === "" && required === true) {
-        return { message: "Rellena los campos", validated: false };
+        return { message: "Rellena los campos vacios", validated: false };
       } else if (data.length < 5) {
         return {
           message: "El password tiene que tener mas de 4 caracteres",
@@ -70,7 +70,7 @@ export const validate = (name, data, required) => {
     case "phone":
 
       if (data === "" && required === true) {
-        return { message: "Rellena los campos", validation: false };
+        return { message: "Rellena los campos vacios", validation: false };
       }
       if (!/[0-9]/.test(data)) {
         return {
@@ -116,7 +116,7 @@ export const validate2 = (name, data, required) => {
 
     case "email":
       if (data === "" && required === true) {
-        return { message: "Rellena los campos", validated: false };
+        return { message: "Rellena los campos vacios", validated: false };
       } else if (
         !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data)
       ) {
@@ -129,7 +129,7 @@ export const validate2 = (name, data, required) => {
 
       if (data === "" && required === true) {
         return { 
-          message: "Rellena los campos", 
+          message: "Rellena los campos vacios", 
           validated: false };
       }
       if (data.length < 5) {
@@ -153,7 +153,7 @@ export const validate2 = (name, data, required) => {
     case "phone":
 
       if (data === "" && required === true) {
-        return { message: "Rellena los campos", validation: false };
+        return { message: "Rellena los campos vacios", validation: false };
       }
       if (!/[0-9]/.test(data)) {
         return {

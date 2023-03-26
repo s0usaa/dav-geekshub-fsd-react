@@ -48,16 +48,18 @@ export const getAppointment = async (token) =>{
 export const createCitas = async ( body,token) => {
   let config = {
     headers: {
-      'Authorization' : `Bearer` + token,
+      'Authorization' : `Bearer ${token}`
     }
   }
-  let patient = {
-    body: {
-      doctor_id: 1,
-      patient_id: 6,
-      date: "2023-03-31",
-      hour: "13:30"
+  return await axios.post(`${root}appointment`,body, config);
+}
+
+//Ver citas Doctor
+export const getAppointmentDr = async (token) =>{
+  let config = {
+    headers: {
+      'Authorization' : `Bearer ${token}`
     }
   }
-  return await axios.post(`${root}appointment`,body, patient, config);
+  return await axios.get(`${root}appointmentDr`, config);
 }

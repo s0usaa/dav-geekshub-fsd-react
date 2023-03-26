@@ -56,15 +56,16 @@ export const NavbarWeb = () => {
                 <Nav.Link as={Link} to={"/"}>
                   Home
                 </Nav.Link>
-                <Nav.Link  as={Link} to={"/home"} onClick={()=>logout()}>
+                <Nav.Link  as={Link} to={"/"} onClick={()=>logout()}>
                   Logout
                 </Nav.Link>
               </>
             ): datosCredencialesRedux.credentials.usuario.roleId === 2 ? (
               <>
-              <Nav.Link as={Link} to={"/appointmentweb"}>
-                  Citas
-                </Nav.Link>
+              <NavDropdown title='Doctor'>
+                  <NavDropdown.Item as={Link} to={"/appointmentDr"} >Citas Dr
+                  </NavDropdown.Item>
+              </NavDropdown>
                 <Nav.Link  as={Link} to={"/"} onClick={()=>logout()}>
                   Logout
                 </Nav.Link>

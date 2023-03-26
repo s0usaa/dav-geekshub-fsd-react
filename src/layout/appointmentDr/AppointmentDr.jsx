@@ -1,39 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { getAppointment } from "../../services/apiCalls";
-import { userData } from "../userSlice";
-import "./AppointmentWeb.css";
+import { getAppointmentDr } from "../../services/apiCalls";
 
-export const AppointmentWeb = () => {
+import { userData } from "../userSlice";
+import "./AppointmentDr.css";
+
+export const AppointmentDr = () => {
   const reduxCredentials = useSelector(userData);
 
-  const [userAppointment, setUserAppointment] = useState([]);
+  const [doctorAppointment, setDoctorAppointment] = useState([]);
 
   useEffect(() => {
-    if (userAppointment.length === 0) {
-      getAppointment(reduxCredentials.credentials.token)
+    if (doctorAppointment.length === 0) {
+      getAppointmentDr(reduxCredentials.credentials.token)
         .then((respuesta) => {
-          setUserAppointment(respuesta.data);
+          setDoctorAppointment(respuesta.data);
         })
         .catch((error) => console.log(error));
     }
-  }, [userAppointment]);
+  }, [doctorAppointment]);
 
-  console.log(userAppointment);
+  console.log(doctorAppointment);
   return (
     <Container fluid>
-      <Row className="appointmentDesign">
+      <Row className="appointmentDesignDr">
         <Col className="d-flex flex-column align-items-center justify-content-center">
-          {userAppointment.map((citas) => {
+          {doctorAppointment.map((citas) => {
             return (
               <>
                 <div key={citas.id}>
-                  <div className="appointmentDiv">Doctor</div>
-                  <div>{citas.doctor_id}</div>
-                  <div className="appointmentDiv">Fecha</div>
+                  <div className="appointmentDivDr">Paciente</div>
+                  <div>{citas.patient_id}</div>
+                  <div className="appointmentDivDr">Fecha</div>
                   <div>{citas.date}</div>
-                  <div className="appointmentDiv">Hora</div>
+                  <div className="appointmentDivDr">Hora</div>
                   <div>{citas.hour}</div>
                 </div>
               </>

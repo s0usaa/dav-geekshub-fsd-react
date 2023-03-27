@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // const root = "http://localhost:4000/"
-const root = "https://backend-clinica-dental-production-e0bb.up.railway.app"
+const root = "https://backend-clinica-dental-production-e0bb.up.railway.app/"
 
 //Logueo
 export const logMe = async (body) => {

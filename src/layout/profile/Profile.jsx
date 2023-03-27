@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row, Card, Form } from 'react-bootstrap';
+import { Col, Container, Row, Form } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { getProfile } from '../../services/apiCalls';
 import { userData } from '../userSlice';

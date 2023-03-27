@@ -95,7 +95,7 @@ export const Register = () => {
   };
 
   return (
-    <Container className="registerMain">
+    <Container fluid >
       <Row className="registerDesign d-flex justify-content-center align-items-center">
         <Col xs={12} sm={6} className="registerCol">
         <h1>Registro en los servicios digitales de Clinica Dental</h1>
@@ -200,7 +200,7 @@ export const Register = () => {
               }
               onClick={registerAct ? registerPatient : () => {}}
             >
-              Register!
+              Register
             </div>
             <p>*Los campos con asterisco son obligatorios</p>
         </Col>

@@ -1,5 +1,11 @@
-.loginInputs{
-    height: 100vh;
+.loginDesign{
+    height: 85vh;
+}
+
+.loginCol{
+    background-color: rgb(241, 241, 241);
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 0.3em 0.3em grey;
 }
 
 .loginSendDeac {

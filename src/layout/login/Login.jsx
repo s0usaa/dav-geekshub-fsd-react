@@ -94,7 +94,6 @@ export const Login = () => {
           token: respuesta.data,
           usuario: decodificado,
         };
-        console.log(datosBackend);
         //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
 
@@ -113,16 +112,18 @@ export const Login = () => {
   return (
     <Container fluid>
       {welcome !== "" ? (
-        <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
-          <Col xs={12} sm={6}>
-            <div>{welcome}</div>
+        <Row className="loginDesign d-flex justify-content-center align-items-center">
+          <Col xs={12} sm={6} className="loginCol">
+            <h1>{welcome}</h1>
           </Col>
         </Row>
       ) : (
-        <Row className="loginInputs d-flex justify-content-center align-items-center my-4">
-          <Col className="" xs={12} sm={6}>
+        <Row className="loginDesign d-flex justify-content-center align-items-center">
+          <Col className="loginCol" xs={12} sm={6}>
+            <h1>Acceso a clientes</h1>
+            <h5>Ya dispongo de cuenta</h5>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
+              <Form.Floating>
               <InputText
                 className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
                 type={"email"}
@@ -132,12 +133,14 @@ export const Login = () => {
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
+              <label htmlFor="floatingInputCustom">Email*</label>
+              </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.emailError}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Floating>
               <InputText
                 className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
                 type={"password"}
@@ -147,6 +150,8 @@ export const Login = () => {
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
+              <label htmlFor="floatingInputCustom">Password*</label>
+              </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.passwordError}
               </Form.Text>
@@ -159,8 +164,9 @@ export const Login = () => {
               }
               onClick={registerAct ? logeame : () => {}}
             >
-              Log in!
+              Log in
             </div>
+            <p>*Los campos con asterisco son obligatorios</p>
           </Col>
         </Row>
       )}

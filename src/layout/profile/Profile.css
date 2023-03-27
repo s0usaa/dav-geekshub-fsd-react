@@ -1,8 +1,9 @@
 .profileDesign{
-    height: 100vh;
+    height: 85vh;
 }
 
-.profileDivs{
-    font-size: 1.5rem;
-    color: rgb(92, 162, 92);
+.profileCol{
+    background-color: rgb(241, 241, 241);
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em 0.3em 0.3em grey;
 }

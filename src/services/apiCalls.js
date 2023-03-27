@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const root = "http://localhost:4000/"
+// const root = "http://localhost:4000/"
+const root = "http://containers-us-west-168.railway.app/"
 
 //Logueo
 export const logMe = async (body) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Container, Row, Card, CardGroup } from "react-bootstrap";
+import { Carousel, Container, Row, Card, CardGroup, Col } from "react-bootstrap";
 import M1 from "../../img/M1.jpg";
 import M2 from "../../img/M2.jpg";
 import M3 from "../../img/M3.jpg";

@@ -20,22 +20,20 @@ export const AppointmentWeb = () => {
     }
   }, [userAppointment]);
 
-  console.log(userAppointment);
   return (
-    <Container fluid className="appointmentDesign">
-      <Row className="align-items-center d-flex justify-content-center">
-        <Col sm={6} lg={6}>
-          <div>
-            <h3>MIS CITAS</h3>
-          {userAppointment.map((citas) => {
-            return (
-                <Form>
+    <Container fluid>
+      <Row className="appointmentDesign align-items-center d-flex justify-content-center mt-5">
+        <Col xs={12} sm={8} lg={6}>
+            <h3 className="text-center mt-3">MIS CITAS</h3>
+            {userAppointment.map((citas) => {
+              return (
+                <Form key={citas.id}>
+                  <div className="appointmentDiv"> 
                   <Form.Group
                     as={Row}
-                    className="mb-3"
                     controlId="formPlaintextPassword"
                   >
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className="mx-2">
                       Doctor
                     </Form.Label>
                     <Col className="mt-2">
@@ -48,10 +46,10 @@ export const AppointmentWeb = () => {
                   </Form.Group>
                   <Form.Group
                     as={Row}
-                    className="mb-3"
+                    className="mb-2"
                     controlId="formPlaintextPassword"
                   >
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className="mx-2">
                       Fecha
                     </Form.Label>
                     <Col>
@@ -67,7 +65,7 @@ export const AppointmentWeb = () => {
                     className="mb-3"
                     controlId="formPlaintextPassword"
                   >
-                    <Form.Label column sm="2">
+                    <Form.Label column sm="2" className="mx-2">
                       Hora
                     </Form.Label>
                     <Col className="mb-2">
@@ -78,10 +76,10 @@ export const AppointmentWeb = () => {
                       />
                     </Col>
                   </Form.Group>
+                  </div>
                 </Form>
-            );
-          })}
-          </div>
+              );
+            })}
         </Col>
       </Row>
     </Container>

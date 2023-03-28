@@ -19,7 +19,6 @@ export const Profile = () => {
     if (userProfile.name === "") {
       getProfile(reduxCredentials.credentials.token)
         .then((respuesta) => {
-          console.log(respuesta);
           setUserProfile({
             name: respuesta.data.name,
             surname: respuesta.data.surname,

@@ -22,13 +22,14 @@ export const AppointmentWeb = () => {
 
   console.log(userAppointment);
   return (
-    <Container fluid>
-      <Row className="appointmentDesign align-items-center d-flex justify-content-center">
-        <Col sm={12} lg={6}>
+    <Container fluid className="appointmentDesign">
+      <Row className="align-items-center d-flex justify-content-center">
+        <Col sm={6} lg={6}>
+          <div>
+            <h3>MIS CITAS</h3>
           {userAppointment.map((citas) => {
             return (
-              <Col className="appointmentCol">
-                <Form key={citas.id}>
+                <Form>
                   <Form.Group
                     as={Row}
                     className="mb-3"
@@ -37,7 +38,7 @@ export const AppointmentWeb = () => {
                     <Form.Label column sm="2">
                       Doctor
                     </Form.Label>
-                    <Col sm="10" lg={8} className="mt-2">
+                    <Col className="mt-2">
                       <Form.Control
                         type="text"
                         placeholder={citas.doctor_id}
@@ -53,7 +54,7 @@ export const AppointmentWeb = () => {
                     <Form.Label column sm="2">
                       Fecha
                     </Form.Label>
-                    <Col sm="10" lg={8}>
+                    <Col>
                       <Form.Control
                         type="text"
                         placeholder={citas.date}
@@ -69,7 +70,7 @@ export const AppointmentWeb = () => {
                     <Form.Label column sm="2">
                       Hora
                     </Form.Label>
-                    <Col sm="10" lg={8} className="mb-2">
+                    <Col className="mb-2">
                       <Form.Control
                         type="text"
                         placeholder={citas.hour}
@@ -78,9 +79,9 @@ export const AppointmentWeb = () => {
                     </Col>
                   </Form.Group>
                 </Form>
-              </Col>
             );
           })}
+          </div>
         </Col>
       </Row>
     </Container>

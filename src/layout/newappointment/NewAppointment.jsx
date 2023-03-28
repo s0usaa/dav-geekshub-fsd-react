@@ -14,14 +14,9 @@ export const NewAppointment = () => {
   const reduxCredentials = useSelector(userData);
   const [newAppointment, setNewAppointment] = useState({
     doctor_id: "",
-    patient_id: reduxCredentials.credentials.token,
     date: "",
     hour: "",
   });
-
-  console.log(newAppointment);
-
-  // console.log(reduxCredentials.credentials);
 
   const inputHandler = (e) => {
     setNewAppointment((prevState) => ({
@@ -29,14 +24,9 @@ export const NewAppointment = () => {
       [e.target.name]: e.target.value,
     }));
   };
-  // console.log(newAppointment);
-
-  const checkError = (e) => {
-    console.log("holaquease");
-  };
 
   const createAppointment = () => {
-    createCitas(reduxCredentials.credentials.token, newAppointment)
+    createCitas(newAppointment, reduxCredentials.credentials.token)
       .then((resultado) => {
         console.log(resultado);
         setNewAppointment(resultado.data);
@@ -76,7 +66,6 @@ export const NewAppointment = () => {
                 name={"date"}
                 placeholder={"Selecciona tu doctor"}
                 changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
               />
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicHour">
@@ -87,7 +76,6 @@ export const NewAppointment = () => {
                 name={"hour"}
                 placeholder={"Selecciona tu doctor"}
                 changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
               />
             </Form.Group>
             <Button variant="dark" onClick={createAppointment}>

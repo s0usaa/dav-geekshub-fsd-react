@@ -17,76 +17,76 @@ import "./Home.css";
 
 export const Home = () => {
   return (
-    <Container>
-      <Row className="mainDesign mt-5 mb-5">
-        <Carousel fade>
-          <Carousel.Item interval={4000}>
-            <img className="d-block w-100" src={M1} alt="M1" />
-            <Carousel.Caption>
-              <h3>UN DENTISTA CERCA DE TI</h3>
-              <h5>
-                Los dos mejores experimentados y cualificados odontólogos, cerca
-                de ti.
-              </h5>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={4000}>
-            <img className="d-block w-100" src={M2} alt="M2" />
-            <Carousel.Caption>
-              <h3>MEJOR EXPERIENCIA</h3>
-              <h5>
-                Prevención, ortodoncia, odontopediatría, implantes y estértica
-                dental
-              </h5>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={4000}>
-            <img className="d-block w-100" src={M3} alt="M3" />
-            <Carousel.Caption>
-              <h3>ÚLTIMA TECNOLOGÍA</h3>
-              <h5>
-                Diagnóstico 3D, implantología avanzada y ortodoncia invisible.
-              </h5>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </Row>
-      <Row className="mb-3">
-        <h2>Tratamientos dentales con la mejor calidad</h2>
-      </Row>
-      <Row className="mb-5">
-        <CardGroup className="gap-3">
-          <Card border="dark">
-            <Card.Img variant="top" src={M4} />
-            <Card.Body>
-              <Card.Title>IMPLANTES</Card.Title>
-              <Card.Text>
-                Una solución fija para reemplazar la falta de dientes o por si
-                quieres sustituir tu prótesis removible
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card border="dark">
-            <Card.Img variant="top" src={M5} />
-            <Card.Body>
-              <Card.Title>BLANQUEAMIENTO</Card.Title>
-              <Card.Text>
-                Devuelve luminosidad a tus dientes y recupera su color natural
-                con un blanqueamiento dental.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card border="dark">
-            <Card.Img variant="top" src={M6} />
-            <Card.Body>
-              <Card.Title>ORTODONCIAS</Card.Title>
-              <Card.Text>
-                Corrige la posición de los dientes para tener una sonrisa bonita
-                y mejorar tu forma de masticar.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </CardGroup>
+    <Container fluid>
+      <Row className="d-flex justify-content-center homeDesign">
+        <Col sm={10} className="d-flex flex-column align-items-center">
+          <Carousel fade className="mt-5">
+            <Carousel.Item interval={4000}>
+              <img className="d-block w-100" src={M1} alt="M1" />
+              <Carousel.Caption>
+                <h3>UN DENTISTA CERCA DE TI</h3>
+                <h5>
+                  Los dos mejores experimentados y cualificados odontólogos,
+                  cerca de ti.
+                </h5>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item interval={4000}>
+              <img className="d-block w-100" src={M2} alt="M2" />
+              <Carousel.Caption>
+                <h3>MEJOR EXPERIENCIA</h3>
+                <h5>
+                  Prevención, ortodoncia, odontopediatría, implantes y estértica
+                  dental
+                </h5>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item interval={4000}>
+              <img className="d-block w-100" src={M3} alt="M3" />
+              <Carousel.Caption>
+                <h3>ÚLTIMA TECNOLOGÍA</h3>
+                <h5>
+                  Diagnóstico 3D, implantología avanzada y ortodoncia invisible.
+                </h5>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+          <div className="mt-3">
+            <h1>Tratamientos dentales con la mejor calidad</h1>
+            </div>
+            <CardGroup className="gap-3 mt-3">
+              <Card border="dark">
+                <Card.Img variant="top" src={M4} />
+                <Card.Body>
+                  <Card.Title>IMPLANTES</Card.Title>
+                  <Card.Text>
+                    Una solución fija para reemplazar la falta de dientes o por
+                    si quieres sustituir tu prótesis removible
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card border="dark">
+                <Card.Img variant="top" src={M5} />
+                <Card.Body>
+                  <Card.Title>BLANQUEAMIENTO</Card.Title>
+                  <Card.Text>
+                    Devuelve luminosidad a tus dientes y recupera su color
+                    natural con un blanqueamiento dental.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card border="dark">
+                <Card.Img variant="top" src={M6} />
+                <Card.Body>
+                  <Card.Title>ORTODONCIAS</Card.Title>
+                  <Card.Text>
+                    Corrige la posición de los dientes para tener una sonrisa
+                    bonita y mejorar tu forma de masticar.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </CardGroup>
+        </Col>
       </Row>
     </Container>
   );

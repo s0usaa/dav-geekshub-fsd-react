@@ -45,6 +45,7 @@ export const getAppointment = async (token) => {
 
 //Crear citas Usuario
 export const createCitas = async (body, token) => {
+  console.log(token);
   let config = {
     headers: {
       Authorization: `Bearer ${token}`,

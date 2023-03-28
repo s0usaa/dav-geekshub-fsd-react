@@ -19,10 +19,10 @@ export const Home = () => {
   return (
     <Container fluid>
       <Row className="d-flex justify-content-center homeDesign">
-        <Col sm={10} className="d-flex flex-column align-items-center">
-          <Carousel fade className="mb-5">
+        <Col className="d-flex flex-column align-items-center">
+          <Carousel fade className="mt-5">
             <Carousel.Item interval={4000}>
-              <img className="d-block w-100" src={M1} alt="M1" />
+              <img className="d-block w-100 autoZoom" src={M1} alt="M1" />
               <Carousel.Caption>
                 <h3>UN DENTISTA CERCA DE TI</h3>
                 <h5>
@@ -51,10 +51,10 @@ export const Home = () => {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-          <div className="mb-5">
+          <div className="mt-5">
             <h1>Tratamientos dentales con la mejor calidad</h1>
             </div>
-            <CardGroup className="gap-3 mb-5">
+            <CardGroup className="gap-3 mb-5 mt-5">
               <Card border="dark">
                 <Card.Img variant="top" src={M4} />
                 <Card.Body>

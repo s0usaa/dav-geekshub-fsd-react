@@ -24,8 +24,8 @@ export const AppointmentDr = () => {
   console.log(doctorAppointment);
   return (
     <Container fluid>
-      <Row className="appointmentDesignDr d-flex align-items-center justify-content-center">
-        <Col xs={12} sm={8} lg={6}>
+      <Row className="appointmentDesignDr d-flex align-items-center justify-content-center mt-5">
+        <Col xs={12} sm={8} lg={6} className="mt-4">
           <h3 className="text-center mb-3">CITAS DEL DOCTOR</h3>
           {doctorAppointment.map((citas) => {
             return (

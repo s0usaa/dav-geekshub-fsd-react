@@ -34,20 +34,20 @@ export const Profile = () => {
   return (
     <Container fluid>
       <Row className="profileDesign align-items-center d-flex justify-content-center">
-        <Col className="profileCol" sm={12} lg={6}>
-          <Col sm={12} lg={8} className="mb-4 text-dark">
+        <Col className="profileCol" xs={10} lg={6}>
+          <div className="mb-4 text-dark text-center">
             <h2>Informacion de contacto</h2>
-          </Col>
+          </div>
           <Form>
             <Form.Group
               as={Row}
               className="mb-3"
-              controlId="formPlaintextPassword"
+              controlId="formPlaintextName"
             >
               <Form.Label column sm="2">
                 Nombre
               </Form.Label>
-              <Col sm="10" lg={8}>
+              <Col>
                 <Form.Control
                   type="text"
                   placeholder={userProfile.name}
@@ -58,12 +58,12 @@ export const Profile = () => {
             <Form.Group
               as={Row}
               className="mb-3"
-              controlId="formPlaintextPassword"
+              controlId="formPlaintextSurname"
             >
               <Form.Label column sm="2">
                 Apellido
               </Form.Label>
-              <Col sm="10" lg={8}>
+              <Col>
                 <Form.Control
                   type="text"
                   placeholder={userProfile.surname}
@@ -74,12 +74,12 @@ export const Profile = () => {
             <Form.Group
               as={Row}
               className="mb-3"
-              controlId="formPlaintextPassword"
+              controlId="formPlaintextPhone"
             >
               <Form.Label column sm="2">
                 Telefono
               </Form.Label>
-              <Col sm="10" lg={8}>
+              <Col>
                 <Form.Control
                   type="text"
                   placeholder={userProfile.phone}
@@ -90,12 +90,12 @@ export const Profile = () => {
             <Form.Group
               as={Row}
               className="mb-3"
-              controlId="formPlaintextPassword"
+              controlId="formPlaintextEmail"
             >
               <Form.Label column sm="2">
                 Email
               </Form.Label>
-              <Col sm="10" lg={8}>
+              <Col>
                 <Form.Control
                   type="text"
                   placeholder={userProfile.email}

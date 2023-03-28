@@ -124,16 +124,18 @@ export const Login = () => {
             <h5>Ya dispongo de cuenta</h5>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Floating>
-              <InputText
-                className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
-                type={"email"}
-                name={"email"}
-                placeholder={"Introduce tu email"}
-                required={true}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <label htmlFor="floatingInputCustom">Email*</label>
+                <InputText
+                  className={
+                    credencialesError.nameError === "" ? "mb-4" : "mb-4"
+                  }
+                  type={"email"}
+                  name={"email"}
+                  placeholder={"Introduce tu email"}
+                  required={true}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <label htmlFor="floatingInputCustom">Email*</label>
               </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.emailError}
@@ -141,16 +143,18 @@ export const Login = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Floating>
-              <InputText
-                className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
-                type={"password"}
-                name={"password"}
-                placeholder={"Introduce tu password"}
-                required={true}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <label htmlFor="floatingInputCustom">Password*</label>
+                <InputText
+                  className={
+                    credencialesError.nameError === "" ? "mb-4" : "mb-4"
+                  }
+                  type={"password"}
+                  name={"password"}
+                  placeholder={"Introduce tu password"}
+                  required={true}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <label htmlFor="floatingInputCustom">Password*</label>
               </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.passwordError}
@@ -158,9 +162,7 @@ export const Login = () => {
             </Form.Group>
             <div
               className={
-                registerAct
-                  ? "loginSendDeac loginSendAct"
-                  : "loginSendDeac"
+                registerAct ? "loginSendDeac loginSendAct" : "loginSendDeac"
               }
               onClick={registerAct ? logeame : () => {}}
             >

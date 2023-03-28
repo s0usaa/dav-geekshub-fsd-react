@@ -24,62 +24,61 @@ export const AppointmentWeb = () => {
   return (
     <Container fluid>
       <Row className="appointmentDesign align-items-center d-flex justify-content-center">
-        <Col sm={12} lg={6} >
+        <Col sm={12} lg={6}>
           {userAppointment.map((citas) => {
             return (
               <Col className="appointmentCol">
                 <Form key={citas.id}>
-                    <Form.Group
-                      as={Row}
-                      className="mb-3"
-                      controlId="formPlaintextPassword"
-                    >
-                      <Form.Label column sm="2">
-                        Doctor
-                      </Form.Label>
-                      <Col sm="10" lg={8} className="mt-2" >
-                        <Form.Control
-                          type="text"
-                          placeholder={citas.doctor_id}
-                          readOnly
-                         />
-                      </Col>
-                    </Form.Group>
-                    <Form.Group
-                      as={Row}
-                      className="mb-3"
-                      controlId="formPlaintextPassword"
-                    >
-                      <Form.Label column sm="2">
-                        Fecha
-                      </Form.Label>
-                      <Col sm="10" lg={8}>
-                        <Form.Control
-                          type="text"
-                          placeholder={citas.date}
-                          readOnly
-                        />
-                      </Col>
-                    </Form.Group>
-                    <Form.Group
-                      as={Row}
-                      className="mb-3"
-                      controlId="formPlaintextPassword"
-                    >
-                      <Form.Label column sm="2">
-                        Hora
-                      </Form.Label>
-                      <Col sm="10" lg={8} className="mb-2" >
-                        <Form.Control
-                          type="text"
-                          placeholder={citas.hour}
-                          readOnly
-                        />
-                      </Col>
-                    </Form.Group>
-                    
+                  <Form.Group
+                    as={Row}
+                    className="mb-3"
+                    controlId="formPlaintextPassword"
+                  >
+                    <Form.Label column sm="2">
+                      Doctor
+                    </Form.Label>
+                    <Col sm="10" lg={8} className="mt-2">
+                      <Form.Control
+                        type="text"
+                        placeholder={citas.doctor_id}
+                        readOnly
+                      />
+                    </Col>
+                  </Form.Group>
+                  <Form.Group
+                    as={Row}
+                    className="mb-3"
+                    controlId="formPlaintextPassword"
+                  >
+                    <Form.Label column sm="2">
+                      Fecha
+                    </Form.Label>
+                    <Col sm="10" lg={8}>
+                      <Form.Control
+                        type="text"
+                        placeholder={citas.date}
+                        readOnly
+                      />
+                    </Col>
+                  </Form.Group>
+                  <Form.Group
+                    as={Row}
+                    className="mb-3"
+                    controlId="formPlaintextPassword"
+                  >
+                    <Form.Label column sm="2">
+                      Hora
+                    </Form.Label>
+                    <Col sm="10" lg={8} className="mb-2">
+                      <Form.Control
+                        type="text"
+                        placeholder={citas.hour}
+                        readOnly
+                      />
+                    </Col>
+                  </Form.Group>
                 </Form>
-                </Col>
+              </Col>
             );
           })}
         </Col>

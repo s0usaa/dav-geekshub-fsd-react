@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { InputText } from "../../components/inputtext/InputText";
 import { validate } from "../../helpers/useful";
 import { registerUser } from "../../services/apiCalls";
-import './Register.css'
+import "./Register.css";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -65,24 +65,24 @@ export const Register = () => {
     }
 
     setRegisterAct(true);
-});
+  });
 
-    const checkError = (e) => {
-      let error = "";
-      let checked = validate(e.target.name, e.target.value, e.target.required);
-  
-      error = checked.message;
-  
-      setValiCredenciales((prevState) => ({
-        ...prevState,
-        [e.target.name + "Vali"]: checked.validated,
-      }));
-  
-      setCredencialesError((prevState) => ({
-        ...prevState,
-        [e.target.name + "Error"]: error,
-      }));
-    };
+  const checkError = (e) => {
+    let error = "";
+    let checked = validate(e.target.name, e.target.value, e.target.required);
+
+    error = checked.message;
+
+    setValiCredenciales((prevState) => ({
+      ...prevState,
+      [e.target.name + "Vali"]: checked.validated,
+    }));
+
+    setCredencialesError((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: error,
+    }));
+  };
 
   const registerPatient = () => {
     registerUser(credenciales)
@@ -95,25 +95,30 @@ export const Register = () => {
   };
 
   return (
-    <Container fluid >
+    <Container fluid>
       <Row className="registerDesign d-flex justify-content-center align-items-center">
         <Col xs={12} sm={6} className="registerCol">
-        <h1>Registro en los servicios digitales de Clinica Dental</h1>
-        <h6>Completa este formulario y accede a todas las ventajas de ser cliente de SegurCaixa Adeslas.</h6>
+          <h1>Registro en los servicios digitales de Clinica Dental</h1>
+          <h6>
+            Completa este formulario y accede a todas las ventajas de ser
+            cliente de SegurCaixa Adeslas.
+          </h6>
           <Form>
             <Form.Group className="mb-1" controlId="formBasicName">
               <Form.Floating>
-              <InputText
-                className={credencialesError.nameError === "" ? "mb-4" : "mb-4"}
-                type={"text"}
-                name={"name"}
-                placeholder={"Introduce tu nombre"}
-                required={true}
-                maxLenght={18}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <label htmlFor="floatingInputCustom">Nombre*</label>
+                <InputText
+                  className={
+                    credencialesError.nameError === "" ? "mb-4" : "mb-4"
+                  }
+                  type={"text"}
+                  name={"name"}
+                  placeholder={"Introduce tu nombre"}
+                  required={true}
+                  maxLenght={18}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <label htmlFor="floatingInputCustom">Nombre*</label>
               </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.nameError}
@@ -121,17 +126,19 @@ export const Register = () => {
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicSurname">
               <Form.Floating>
-              <InputText
-                className={credencialesError.surnameError === "" ? "mb-4" : "mb-4"}
-                type={"text"}
-                name={"surname"}
-                placeholder={"Introduce tu apellido"}
-                required={true}
-                maxLenght={30}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <label htmlFor="floatingInputCustom">Apellido*</label>
+                <InputText
+                  className={
+                    credencialesError.surnameError === "" ? "mb-4" : "mb-4"
+                  }
+                  type={"text"}
+                  name={"surname"}
+                  placeholder={"Introduce tu apellido"}
+                  required={true}
+                  maxLenght={30}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <label htmlFor="floatingInputCustom">Apellido*</label>
               </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.surnameError}
@@ -139,17 +146,19 @@ export const Register = () => {
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicPhone">
               <Form.Floating>
-              <InputText
-                className={credencialesError.phoneError === "" ? "mb-4" : "mb-4"}
-                type={"text"}
-                name={"phone"}
-                placeholder={"Introduce tu telefono"}
-                required={true}
-                maxLenght={10}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <label htmlFor="floatingInputCustom">Telefono*</label>
+                <InputText
+                  className={
+                    credencialesError.phoneError === "" ? "mb-4" : "mb-4"
+                  }
+                  type={"text"}
+                  name={"phone"}
+                  placeholder={"Introduce tu telefono"}
+                  required={true}
+                  maxLenght={10}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <label htmlFor="floatingInputCustom">Telefono*</label>
               </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.phoneError}
@@ -157,17 +166,19 @@ export const Register = () => {
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicEmail">
               <Form.Floating>
-              <InputText
-                className={credencialesError.emailError === "" ? "mb-4" : "mb-4"}
-                type={"email"}
-                name={"email"}
-                placeholder={"Introduce tu email"}
-                required={true}
-                maxLenght={50}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <label htmlFor="floatingInputCustom">Email*</label>
+                <InputText
+                  className={
+                    credencialesError.emailError === "" ? "mb-4" : "mb-4"
+                  }
+                  type={"email"}
+                  name={"email"}
+                  placeholder={"Introduce tu email"}
+                  required={true}
+                  maxLenght={50}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <label htmlFor="floatingInputCustom">Email*</label>
               </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.emailError}
@@ -175,17 +186,19 @@ export const Register = () => {
             </Form.Group>
             <Form.Group className="mb-1" controlId="formBasicPassword">
               <Form.Floating>
-              <InputText
-                className={credencialesError.passwordError === "" ? "mb-4" : "mb-4"}
-                type={"password"}
-                name={"password"}
-                placeholder={"Introduce tu password"}
-                required={true}
-                maxLenght={18}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <label htmlFor="floatingInputCustom">Password*</label>
+                <InputText
+                  className={
+                    credencialesError.passwordError === "" ? "mb-4" : "mb-4"
+                  }
+                  type={"password"}
+                  name={"password"}
+                  placeholder={"Introduce tu password"}
+                  required={true}
+                  maxLenght={18}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+                <label htmlFor="floatingInputCustom">Password*</label>
               </Form.Floating>
               <Form.Text className="text-danger">
                 {credencialesError.passwordError}
@@ -193,16 +206,16 @@ export const Register = () => {
             </Form.Group>
           </Form>
           <div
-              className={
-                registerAct
-                  ? "registerSendDeac registerSendAct"
-                  : "registerSendDeac"
-              }
-              onClick={registerAct ? registerPatient : () => {}}
-            >
-              Register
-            </div>
-            <p>*Los campos con asterisco son obligatorios</p>
+            className={
+              registerAct
+                ? "registerSendDeac registerSendAct"
+                : "registerSendDeac"
+            }
+            onClick={registerAct ? registerPatient : () => {}}
+          >
+            Register
+          </div>
+          <p>*Los campos con asterisco son obligatorios</p>
         </Col>
       </Row>
     </Container>

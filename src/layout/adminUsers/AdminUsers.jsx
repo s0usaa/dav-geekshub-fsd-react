@@ -42,9 +42,14 @@ export const AdminUsers = () => {
             {users.map((persona) => {
               return (
                 <ListGroup>
-                <ListGroup.Item as="li" onClick={() => selected(persona)} key={persona.id} action>
-                  {persona.name}
-                </ListGroup.Item>
+                  <ListGroup.Item
+                    as="li"
+                    onClick={() => selected(persona)}
+                    key={persona.id}
+                    action
+                  >
+                    {persona.name}
+                  </ListGroup.Item>
                 </ListGroup>
               );
             })}

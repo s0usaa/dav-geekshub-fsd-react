@@ -14,16 +14,16 @@ export const Body = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="*" element={<Navigate to="/"/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/appointmentweb" element={<AppointmentWeb/>} />
-        <Route path="/appointmentDr" element={<AppointmentDr/>} />
-        <Route path="/appointment/create" element={<NewAppointment/>} />
-        <Route path="/users" element={<AdminUsers/>} />
-        <Route path="/detail" element={<Detail/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/appointmentweb" element={<AppointmentWeb />} />
+        <Route path="/appointmentDr" element={<AppointmentDr />} />
+        <Route path="/appointment/create" element={<NewAppointment />} />
+        <Route path="/users" element={<AdminUsers />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </>
   );

@@ -1,11 +1,18 @@
 import React from "react";
-import { Carousel, Container, Row, Card, CardGroup, Col } from "react-bootstrap";
+import {
+  Carousel,
+  Container,
+  Row,
+  Card,
+  CardGroup,
+  Col,
+} from "react-bootstrap";
 import M1 from "../../img/M1.jpg";
 import M2 from "../../img/M2.jpg";
 import M3 from "../../img/M3.jpg";
 import M4 from "../../img/M4.png";
 import M5 from "../../img/M5.jpeg";
-import M6 from "../../img/M6.jpeg"
+import M6 from "../../img/M6.jpeg";
 import "./Home.css";
 
 export const Home = () => {

@@ -20,7 +20,7 @@ export const Home = () => {
     <Container fluid>
       <Row className="d-flex justify-content-center homeDesign">
         <Col sm={10} className="d-flex flex-column align-items-center">
-          <Carousel fade className="mt-5">
+          <Carousel fade>
             <Carousel.Item interval={4000}>
               <img className="d-block w-100" src={M1} alt="M1" />
               <Carousel.Caption>
@@ -51,10 +51,10 @@ export const Home = () => {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-          <div className="mt-3">
+          <div className="mt-5">
             <h1>Tratamientos dentales con la mejor calidad</h1>
             </div>
-            <CardGroup className="gap-3 mt-3">
+            <CardGroup className="gap-3 mt-5">
               <Card border="dark">
                 <Card.Img variant="top" src={M4} />
                 <Card.Body>

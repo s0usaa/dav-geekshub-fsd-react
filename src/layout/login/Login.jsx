@@ -94,14 +94,8 @@ export const Login = () => {
           token: respuesta.data,
           usuario: decodificado,
         };
-        //Este es el momento en el que guardo en REDUX
         dispatch(login({ credentials: datosBackend }));
-
-        //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
         setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.email}`);
-
-        //Redirección a Home
-
         setTimeout(() => {
           navigate("/");
         }, 3000);
@@ -113,13 +107,13 @@ export const Login = () => {
     <Container fluid>
       {welcome !== "" ? (
         <Row className="loginDesign d-flex justify-content-center align-items-center">
-          <Col xs={12} sm={6} className="loginCol">
+          <Col xs={10} sm={6} className="loginCol">
             <h1>{welcome}</h1>
           </Col>
         </Row>
       ) : (
         <Row className="loginDesign d-flex justify-content-center align-items-center">
-          <Col className="loginCol" xs={12} sm={6}>
+          <Col className="loginCol" xs={10} lg={6}>
             <h1>Acceso a clientes</h1>
             <h5>Ya dispongo de cuenta</h5>
             <Form.Group className="mb-3" controlId="formBasicEmail">

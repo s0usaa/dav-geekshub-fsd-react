@@ -6,27 +6,66 @@ import { detailData } from "../detailSlice";
 import "./Detail.css";
 
 export const Detail = () => {
-  //Conexion a RDX en modo lectura
   const detailRedux = useSelector(detailData);
 
-  useEffect(() => {
-    console.log(detailRedux.choosenObject.name);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
-    <Container fluid className="detailDesign">
-      <Row
-        className="detailRow d-flex flex-column align-items-center justify-content-center"
-        lg={6}
-      >
-        <Form.Label htmlFor="inputPassword5">Nombre</Form.Label>
-        <Col className="mb-2">{detailRedux.choosenObject.name}</Col>
-        <Form.Label htmlFor="inputPassword5">Apellido</Form.Label>
-        <Col className="mb-2">{detailRedux.choosenObject.surname}</Col>
-        <Form.Label htmlFor="inputPassword5">Telefono</Form.Label>
-        <Col className="mb-2">{detailRedux.choosenObject.phone}</Col>
-        <Form.Label htmlFor="inputPassword5">Email</Form.Label>
-        <Col className="mb-2">{detailRedux.choosenObject.email}</Col>
+    <Container fluid>
+      <Row className="detailDesign d-flex align-items-center justify-content-center">
+        <Col className="detailCol" xs={10} lg={6}>
+          <h2 className="mb-4 text-center">Informacion del Usuario</h2>
+          <Form>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
+              <Form.Label column sm="2">
+                Nombre
+              </Form.Label>
+              <Col>
+                <Form.Control
+                  type="text"
+                  placeholder={detailRedux.choosenObject.name}
+                  readOnly
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
+              <Form.Label column sm="2">
+                Apellido
+              </Form.Label>
+              <Col>
+                <Form.Control
+                  type="text"
+                  placeholder={detailRedux.choosenObject.surname}
+                  readOnly
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
+              <Form.Label column sm="2">
+                Telefono
+              </Form.Label>
+              <Col>
+                <Form.Control
+                  type="text"
+                  placeholder={detailRedux.choosenObject.phone}
+                  readOnly
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
+              <Form.Label column sm="2">
+                Email
+              </Form.Label>
+              <Col>
+                <Form.Control
+                  type="text"
+                  placeholder={detailRedux.choosenObject.email}
+                  readOnly
+                />
+              </Col>
+            </Form.Group>
+          </Form>
+        </Col>
       </Row>
     </Container>
   );

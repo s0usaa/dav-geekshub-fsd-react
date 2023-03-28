@@ -96,8 +96,8 @@ export const Register = () => {
 
   return (
     <Container fluid>
-      <Row className="registerDesign d-flex justify-content-center align-items-center">
-        <Col xs={12} sm={6} className="registerCol">
+      <Row className="registerDesign d-flex justify-content-center align-items-center mt-3">
+        <Col xs={10} sm={6} className="registerCol mt-5 mb-4">
           <h1>Registro en los servicios digitales de Clinica Dental</h1>
           <h6>
             Completa este formulario y accede a todas las ventajas de ser

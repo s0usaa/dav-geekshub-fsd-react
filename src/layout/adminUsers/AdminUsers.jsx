@@ -38,17 +38,17 @@ export const AdminUsers = () => {
     <Container fluid>
       <Row className="adminusersDesign align-items-center d-flex justify-content-center text-center">
         {users.length > 0 ? (
-          <Col sm={4} lg={2}>
+          <Col sm={4} lg={2} className="mt-4">
+            <h2 className="mb-4">LISTA DE USUARIOS</h2>
             {users.map((persona) => {
               return (
-                <ListGroup>
+                <ListGroup className="adminUsersDiv">
                   <ListGroup.Item
                     as="li"
                     onClick={() => selected(persona)}
                     key={persona.id}
-                    action
-                  >
-                    {persona.name}
+                    action>
+                    {persona.name} {persona.surname}
                   </ListGroup.Item>
                 </ListGroup>
               );

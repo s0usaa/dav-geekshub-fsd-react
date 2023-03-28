@@ -24,15 +24,12 @@ export const AppointmentWeb = () => {
     <Container fluid>
       <Row className="appointmentDesign align-items-center d-flex justify-content-center mt-5">
         <Col xs={12} sm={8} lg={6}>
-            <h3 className="text-center mt-3">MIS CITAS</h3>
-            {userAppointment.map((citas) => {
-              return (
-                <Form key={citas.id}>
-                  <div className="appointmentDiv"> 
-                  <Form.Group
-                    as={Row}
-                    controlId="formPlaintextPassword"
-                  >
+          <h3 className="text-center mt-3">MIS CITAS</h3>
+          {userAppointment.map((citas) => {
+            return (
+              <Form key={citas.id}>
+                <div className="appointmentDiv">
+                  <Form.Group as={Row} controlId="formPlaintextPassword">
                     <Form.Label column sm="2" className="mx-2">
                       Doctor
                     </Form.Label>
@@ -76,10 +73,10 @@ export const AppointmentWeb = () => {
                       />
                     </Col>
                   </Form.Group>
-                  </div>
-                </Form>
-              );
-            })}
+                </div>
+              </Form>
+            );
+          })}
         </Col>
       </Row>
     </Container>
